@@ -27,7 +27,7 @@
 - **Backend**: FastAPI + MongoDB Atlas + JWT Auth
 - **Frontend**: React Native (Expo) & Next.js 15 (App Router)
 - **Data Science**: Pandas, NumPy for analytics
-- **Deployment**: Render (API), Expo Go (Mobile), Vercel
+- **Deployment**: Render (API), Expo Go (Mobile), Vercel(Web)
 
 > 💡 Currently under development — follow along in the `dev` branch!
 
