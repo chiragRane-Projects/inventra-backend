@@ -1,10 +1,11 @@
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, status, Depends
 from app.schemas.user_schema import UserCreate, UserLogin
 from app.utils.hash import hash_password, verify_password
 from app.db.mongo import user_collection
 from app.auth.jwt_handler import create_access_token, create_refresh_token
 from bson import ObjectId
 from pymongo.errors import DuplicateKeyError
+from app.auth.deps import get_current_user
 
 router = APIRouter()
 
@@ -52,3 +53,7 @@ def login(user: UserLogin):
         "refresh_token": refresh_token,
         "token_type": "bearer"
     }
+    
+@router.get("/me")
+def read_current_user(current_user: dict = Depends(get_current_user)):
+    return current_user

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import auth_router
+from app.routers import auth_router, test_router
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
@@ -25,6 +25,7 @@ app.add_middleware(
 )
 
 app.include_router(auth_router.router, prefix="/api/auth", tags=["Auth"])
+app.include_router(test_router.router, prefix="/test", tags=["Role Test"])
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
