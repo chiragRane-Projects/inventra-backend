@@ -9,3 +9,4 @@ client = MongoClient(MONGO_URI)
 
 db = client["Inventra_db"]
 user_collection = db['users']
+inventory_collection = db['inventory']
