@@ -15,13 +15,13 @@ class InventoryCreate(InventoryBase):
     pass
 
 class InventoryUpdate(BaseModel):
-    name: Optional[str]
-    category: Optional[str]
-    quantity: Optional[float]
-    unit: Optional[str]
-    price: Optional[float]
-    supplier: Optional[str]
-    expiry_date: Optional[date]
+    name: Optional[str] = None
+    category: Optional[str] = None
+    quantity: Optional[float] = None
+    unit: Optional[str] = None
+    price: Optional[float] = None
+    supplier: Optional[str] = None
+    expiry_date: Optional[date] = None
 
 class InventoryResponse(InventoryBase):
     id: str
